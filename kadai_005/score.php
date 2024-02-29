@@ -24,7 +24,7 @@
     
        $averageScore = $totalScore / 10;
 
-       echo '' .$averageScore;
+       echo $averageScore;
 
      ?>
     </p>
