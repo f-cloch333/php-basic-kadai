@@ -8,33 +8,31 @@
 
 <body>
     <p>
-<?php
-function sort_2way($array, $order = 'ascending') {
-    if ($order == 'ascending') {
+    <?php
+function sort_2way($array, $order) {
+    if ($order) {
         sort($array);
-    } elseif ($order == 'descending') {
+        echo "昇順にソートします。<br>";
+    } else {
         rsort($array);
+        echo "降順にソートします。<br>";
     }
     
-    return $array;
+    foreach ($array as $value) {
+        echo $value . "<br>";
+    }
 }
 
 $nums = [15, 4, 18, 23, 10];
 
 // 昇順ソートを呼び出し
-$sort_asc = sort_2way($nums, 'ascending');
-echo "昇順にソートします。<br>";
-foreach ($sort_asc as $value) {
-    echo $value . "<br>";
-}
+sort_2way($nums, true);
+echo "<br>";
 
 // 降順ソートを呼び出し
-$sort_desc = sort_2way($nums, 'descending');
-echo "降順にソートします。<br>";
-foreach ($sort_desc as $value) {
-    echo $value . "<br>";
-}
+sort_2way($nums, false);
 ?>
+
     </p>
 </body>
 
